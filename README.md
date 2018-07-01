@@ -1,7 +1,7 @@
 
 i have problem with my App.js 
 
-
+![Jest watch mode](https://i.imgur.com/2oqdddu.png)
 
 ------------------------------------
 
