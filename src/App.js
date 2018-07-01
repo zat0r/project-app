@@ -13,7 +13,7 @@ import { robots } from './robots';
     }
 
     onsearchvalue = (event) => {
-        const filterbots = this.state.robots.filter(robot => {
+        const filterbots = this.state.robots.filter(robots => {
             return robots.Name.toLowerCase().includes(this.state.searchbar.toLowerCase());
         })
         console.log(filterbots);
