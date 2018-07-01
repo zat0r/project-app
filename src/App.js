@@ -13,17 +13,18 @@ import { robots } from './robots';
     }
 
     onsearchvalue = (event) => {
+        this.setState({ searchbar: event.target.value })
+    }
+
+    render() {
         const filterbots = this.state.robots.filter(robots => {
             return robots.Name.toLowerCase().includes(this.state.searchbar.toLowerCase());
         })
-        console.log(filterbots);
-    }
-    render() {
         return (
             <div className='tc'>
                 <h1>RoboFriends</h1>
                 <SearchBox SeVa={this.onsearchvalue}/>
-                <CardList robots={this.state.robots}/>
+                <CardList robots={filterbots}/>
             </div>
         );
     }
