@@ -24,6 +24,7 @@ import { robots } from './robots';
             <div className='tc'>
                 <h1>RoboFriends</h1>
                 <SearchBox SeVa={this.onsearchvalue}/>
+                <div className='line'></div>
                 <CardList robots={filterbots}/>
             </div>
         );
