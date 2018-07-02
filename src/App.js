@@ -27,7 +27,7 @@ import './App.css'
             return robots.name.toLowerCase().includes(this.state.searchbar.toLowerCase());
         })
         if (this.state.robots.length === 0) {
-            return <h1>LOADING</h1>
+            return <h1 className='tc'>LOADING</h1>
         }else {
         return (
             <div className='tc'>
