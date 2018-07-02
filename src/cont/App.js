@@ -1,22 +1,17 @@
 import React, { Component } from 'react';
-import CardList from './CardList';
-import SearchBox from './SearchBox';
-import Scroll from './Scroll'
+import CardList from '../comp/CardList';
+import SearchBox from '../comp/SearchBox';
+import Scroll from '../comp/Scroll'
+import { users } from '../comp/robots'
 import './App.css'
 
  class App extends Component {
     constructor () {
         super()
         this.state = {
-            robots: [],
+            robots: users,
             searchbar: '' 
         }
-    }
-
-    componentDidMount() {
-        fetch('https://jsonplaceholder.typicode.com/users')
-        .then(response => response.json())
-        .then(users => this.setState({robots: users}))
     }
 
     onsearchvalue = (event) => {
@@ -24,8 +19,9 @@ import './App.css'
     }
 
     render() {
-        const filterbots = this.state.robots.filter(robots => {
-            return robots.name.toLowerCase().includes(this.state.searchbar.toLowerCase());
+        const { robots, searchbar } = this.state;
+        const filterbots = robots.filter(robot => {
+            return robot.Name.toLowerCase().includes(searchbar.toLowerCase());
         })
         if (this.state.robots.length === 0) {
             return <h1 className='tc'>LOADING</h1>
