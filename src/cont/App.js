@@ -3,6 +3,7 @@ import CardList from '../comp/CardList';
 import SearchBox from '../comp/SearchBox';
 import Scroll from '../comp/Scroll'
 import { users } from '../comp/robots'
+import ErrorBoundry from '../comp/ErrorBoundry'
 import './App.css'
 
  class App extends Component {
@@ -31,7 +32,9 @@ import './App.css'
                 <SearchBox SeVa={this.onsearchvalue}/>
                 <div className='line'></div>
                 <Scroll>
+                <ErrorBoundry>
                 <CardList robots={filterbots}/>
+                </ErrorBoundry>
                 </Scroll>
             </div>
         );
