@@ -23,10 +23,9 @@ import './App.css'
         const filterbots = robots.filter(robot => {
             return robot.Name.toLowerCase().includes(searchbar.toLowerCase());
         })
-        if (!robots.length) {
-            return <h1 className='tc'>LOADING</h1>
-        }else {
-        return (
+
+        return !robots.length ? <h1 className='tc'>LOADING</h1> :
+        (
             <div className='tc'>
                 <h1>RoboFriends</h1>
                 <SearchBox SeVa={this.onsearchvalue}/>
@@ -36,7 +35,6 @@ import './App.css'
                 </Scroll>
             </div>
         );
-    }
     }
 }
 export default App;
