@@ -23,7 +23,7 @@ import './App.css'
         const filterbots = robots.filter(robot => {
             return robot.Name.toLowerCase().includes(searchbar.toLowerCase());
         })
-        if (this.state.robots.length === 0) {
+        if (!robots.length) {
             return <h1 className='tc'>LOADING</h1>
         }else {
         return (
